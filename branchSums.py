@@ -12,8 +12,11 @@ def branchSums(root):
 	return sums
 
 def calculateBranchSums(node, runningSum, sums):
+	if node is None:
+		return
+
 	newRunningSum = runningSum + node.value
-	if (node.right isNone and node.left is None):
+	if node.right is None and node.left is None:
 		sums.append(newRunningSum)
 		return
 		
